@@ -31,7 +31,6 @@ public class SongOnCollision : MonoBehaviour
             go.AddComponent<AudioSource>().clip = Audio;
             goQueue.Enqueue(go);
         }
-        Debug.Log(taille);
     }
 
     private void OnTriggerEnter(Collider infoObjet)
@@ -39,8 +38,6 @@ public class SongOnCollision : MonoBehaviour
 
         if (infoObjet.gameObject.tag == "Drumsteaks")
         {
-            // Debug.Log("Collision ok");
-
             goQueue.Dequeue().GetComponent<AudioSource>().Play();
         }
 
